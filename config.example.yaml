@@ -1,0 +1,5 @@
+address: localhost:8123
+debug: false
+kafka:
+  addresses:
+    - localhost:9092
