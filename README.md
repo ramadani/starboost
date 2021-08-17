@@ -19,6 +19,15 @@ debug: false
 kafka:
   addresses:
     - localhost:9092
+consumer:
+  enabled: true
+  groupId: starboost
+  topics:
+    - paybill
+    - tap_snap
+  output:
+    stdout: true
+    file: starboost.log
 ```
 
 ## Usage
@@ -55,6 +64,20 @@ curl --location --request POST 'localhost:8123/publish' \
         "foo": "bar"
     }
 }'
+```
+
+### Consume
+
+You can see the incoming messages on your terminal or log file based on consumer output config.
+
+**Example Config**
+
+```yaml
+consumer:
+  ...
+  output:
+    stdout: true
+    file: starboost.log
 ```
 
 ## Contributing

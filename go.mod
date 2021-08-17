@@ -9,5 +9,8 @@ require (
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/labstack/echo/v4 v4.5.0
 	github.com/lithammer/shortuuid/v3 v3.0.7 // indirect
+	go.uber.org/atomic v1.9.0 // indirect
+	go.uber.org/multierr v1.7.0 // indirect
+	go.uber.org/zap v1.19.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )

@@ -16,5 +16,6 @@
 
 .idea
 .DS_Store
+*.log
 
 app.yaml
