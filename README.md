@@ -7,7 +7,7 @@ Kafka Event Client Tool
 
 ## Installation
 
-1. Download zip file on [release](https://github.com/ramadani/starboost/releases) page then extract it
+1. Download the binary file on [release](https://github.com/ramadani/starboost/releases) page
 2. Create yaml config file based on example below
 
 **Example Config**
@@ -32,10 +32,10 @@ consumer:
 
 ## Usage
 
-Run starboost based on your platform
+Run starboost
 
 ```bash
-$ ./starboost-{your-platform} --config=config.yaml
+$ ./starboost --config=config.yaml
 ```
 
 ### Publish
