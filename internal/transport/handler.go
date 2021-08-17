@@ -36,10 +36,14 @@ func (h *Handler) Publish(c echo.Context) error {
 		payload = b
 	}
 
-	msg := message.NewMessage(watermill.NewUUID(), payload)
+	id := watermill.NewUUID()
+	msg := message.NewMessage(id, payload)
 
 	if err := h.Publisher.Publish(req.Topic, msg); err != nil {
 		return fmt.Errorf("publishing message error: %q", err)
 	}
-	return c.String(http.StatusOK, "message published")
+
+	return c.JSON(http.StatusOK, map[string]string{
+		"id": id,
+	})
 }

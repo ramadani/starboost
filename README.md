@@ -7,10 +7,10 @@ Kafka Event Client Tool
 
 ## Installation
 
-1. Download the binary on [release](https://github.com/ramadani/starboost/releases) page
+1. Download the binary file on [release](https://github.com/ramadani/starboost/releases) page
 2. Create yaml config file based on example below
 
-**Config Example**
+**Example Config**
 
 ```yaml
 # config.yaml
@@ -19,6 +19,15 @@ debug: false
 kafka:
   addresses:
     - localhost:9092
+consumer:
+  enabled: true
+  groupId: starboost
+  topics:
+    - paybill
+    - tap_snap
+  output:
+    stdout: true
+    file: starboost.log
 ```
 
 ## Usage
@@ -56,6 +65,25 @@ curl --location --request POST 'localhost:8123/publish' \
     }
 }'
 ```
+
+### Consume
+
+You can see the incoming messages on your terminal or log file based on consumer output config.
+
+**Example Config**
+
+```yaml
+consumer:
+  ...
+  output:
+    stdout: true
+    file: starboost.log
+```
+
+## TODO
+
+- [ ] Filterable on consuming messages
+- [ ] Dockerize
 
 ## Contributing
 

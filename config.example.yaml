@@ -3,3 +3,12 @@ debug: false
 kafka:
   addresses:
     - localhost:9092
+consumer:
+  enabled: true
+  groupId: starboost
+  topics:
+    - paybill
+    - tap_snap
+  output:
+    stdout: true
+    file: starboost.log
